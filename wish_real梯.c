@@ -1,4 +1,4 @@
-#include <stdio.h>
+            /*#include <stdio.h>
 
 int main() {
 
@@ -36,5 +36,42 @@ int main() {
     return 0;
 }
 
-  
+  */
+
+ #include <stdio.h>
+
+int main() {
+//要求函数y=kx+b，其中k和b为待求数，x,y为数据点。
+//输入（x1,y1）（x2,y2）（x3,y3）（x4,y4）....
+//输出k和b的值。
+    double x[10], y[10];
+    int num;
+    double k = 0.0, b = 0.0;
+    double learning_rate = 0.01; //学习率
+    int i ; 
+
+    //输入数据
+    printf("请输入数据个数：");
+    scanf("%d", &num);
+    for(i=0;i<num;i++){
+        scanf("%lf,%lf", &x[i], &y[i]);}
+double r;
+       // 残差平方和
+       r = (y[i] - (k * x[i] + b)) * (y[i] - (k * x[i] + b))*y[i];
+        //y偏导数
+    double dy[10] = 2*y[i]-2*k*x[i]-2*b+k*k*x[i]*x[i]+2*k*b*x[i]+b*b;
+    //x偏导数
+    double dx[10] = 2*k*k*x[i]+2*k*b-2*y[i]*k+y[i]*y[i]+b*b+2*y[i]*b;
+    //k偏导数
+    
+
+    double fd = dx[i]*dx [i]+dy[i]*dy[i];
+    //fd开方    
+    double f = sqrt(fd);
+    double fang = -f;
+    while (fang > 0) {
+        
+    
+
+
   
