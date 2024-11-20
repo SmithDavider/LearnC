@@ -70,8 +70,12 @@ double r;
     double f = sqrt(fd);
     double fang = -f;
     while (fang > 0) {
+
+        
         
     
 
+    }
 
-  
+    return 0;
+}
