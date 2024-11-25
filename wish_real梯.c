@@ -1,5 +1,5 @@
 #include <stdio.h>//要求函数y=kx+b，其中k和b为待求数，x,y为数据点。
-#include <math.h>//输入（x1,y1）（x2,y2）（x3,y3）（x4,y4）....
+//#include <math.h>//输入（x1,y1）（x2,y2）（x3,y3）（x4,y4）....
 //输出k和b的值。
 int main() {
     int num = 6;
@@ -33,14 +33,15 @@ int main() {
             double db = -2 * wuca; //b偏导数
             tk = tk + dk; //累加k的梯度
             tb = tb + db; //累加b的梯度
+            printf("loss=%.3lf\n", wuca * wuca); //输出误差
 
         }
         dk = tk / num; //k梯度
         db = tb / num; //b梯度
-        printf("dk=%.3lf,db=%.3lf\n", dk, db); //输出k和b的梯度
+       // printf("dk=%.3lf,db=%.3lf\n", dk, db); //输出k和b的梯度
         k = k - learning_rate * dk; //更新k
         b = b - learning_rate * db; //更新b
-        printf("k=%.3lf,b=%.3lf\n", k, b); //输出k和b的值和损失函数
+        printf("k=%.3lf,b=%.3lf\n", k, b); //输出k和b的值
     }
     printf("k=%.3lf,b=%.3lf", k, b); //输出k和b的值
     return 0;
