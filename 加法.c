@@ -12,7 +12,7 @@ int main() {         // 主函数
     int num1, num2, sum;
 
     // 用户输入
-    printf("Enter two integers: ");
+    printf("输入两个整数: ");
     scanf("%d %d", &num1, &num2);
 
     // 函数调用

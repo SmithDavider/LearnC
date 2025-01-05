@@ -9,17 +9,27 @@ int main() {
     int num = 0;
     double k = 0.0, b = 0.0;
     double learning_rate = 0.01; // 学习率
-    double r;
+    
     double x[1000], y[1000];
     
     // 输入数据个数
-    printf("请输入数据个数：");
-    scanf("%d", &num);
+    // printf("请输入数据个数：");
+    // scanf("%d", &num);
+    num = 8;
+     x[0] = -10;y[0] = 55;
     
-    // 输入数据
-    for(int i = 0; i < num; i++) {
-        scanf("%lf,%lf", &x[i], &y[i]);
-    }
+    x[1] = 2;y[1] = -30;
+    x[2] = 3; y[2] = 77;
+    x[3] = 4;y[3] = -44;
+    x[4] = 23; y[4] =-99;
+    x[5] = 6; y[5] = -57;
+    x[6] = 7; y[6] = -113;
+    x[7] = -22; y[7] = 150;
+    
+    // // 输入数据
+    // for(int i = 0; i < num; i++) {
+    //     scanf("%lf,%lf", &x[i], &y[i]);
+    // }
     
     // 梯度下降算法
     for (int iter = 0; iter < 1000; iter++) { // 可以设置一个迭代次数上限
@@ -36,6 +46,8 @@ int main() {
         
         k = k - learning_rate * dk; // 更新k
         b = b - learning_rate * db; // 更新b
+
+
     }
     
     // 输出k和b的值
